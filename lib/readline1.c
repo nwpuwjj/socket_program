@@ -1,7 +1,7 @@
 #include "unp.h"
 
 /* PAINFULLY SLOW VERSION -- example only */
-ssize_t written(int fd, const void *ptr, size_t n)
+ssize_t readline(int fd, const void *vptr, size_t maxlen)
 {
     ssize_t n,rc;
     char c, *ptr;

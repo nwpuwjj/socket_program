@@ -14,7 +14,7 @@ ssize_t written(int fd, const void *vptr, size_t n)
     {
         if( (nwritten=write(fd,ptr,nleft))<=0 )
         {
-            if(nwritten<0 && errno == EINTER)
+            if(nwritten<0 && errno == EINTR)
                 nwritten=0; /*and call write() again */
             else
                 return (-1); /*error*/
